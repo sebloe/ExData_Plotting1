@@ -41,7 +41,7 @@ with(data, plot(DateTime,Sub_metering_1,type="n",ylab="Energy sub metering", xla
 with(data,lines(DateTime,Sub_metering_3,col="blue"))
 with(data,lines(DateTime,Sub_metering_2,col="red"))
 with(data,lines(DateTime,Sub_metering_1,col="black"))
-legend("topright",col=c("black","blue","red"),lty=,bty="o", lwd=2.5,legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=, lwd=2.5, col=c("black", "red", "blue"), bty="o")
 
 #plot4
 with(data, plot(DateTime,Global_reactive_power,type="n"))
