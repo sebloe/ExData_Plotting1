@@ -14,11 +14,10 @@ data$Sub_metering_2 = as.numeric(as.character(data$Sub_metering_2))
 data$Sub_metering_3 = as.numeric(as.character(data$Sub_metering_3))
 
 #plotting
+png("plot3.png", width=480, height=480)
 with(data, plot(DateTime,Sub_metering_1,type="n",ylab="Energy sub metering", xlab=""))
 with(data,lines(DateTime,Sub_metering_3,col="blue"))
 with(data,lines(DateTime,Sub_metering_2,col="red"))
 with(data,lines(DateTime,Sub_metering_1,col="black"))
-legend("topright",pch="-",col=c("black","blue","red"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
-#printing
-dev.print(device=png, filename="plot3.png",height=480,width=480)
+legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, lwd=2.5, col=c("black", "red", "blue"))
 dev.off()

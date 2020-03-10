@@ -24,6 +24,8 @@ data$Voltage = as.numeric(as.character(data$Voltage))
 
 
 #plotting
+png("plot4.png", width=480, height=480)
+
 par(mfrow = c(2,2))
 
 #plot1
@@ -39,12 +41,10 @@ with(data, plot(DateTime,Sub_metering_1,type="n",ylab="Energy sub metering", xla
 with(data,lines(DateTime,Sub_metering_3,col="blue"))
 with(data,lines(DateTime,Sub_metering_2,col="red"))
 with(data,lines(DateTime,Sub_metering_1,col="black"))
-legend("topright",pch="-",col=c("black","blue","red"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+legend("topright",col=c("black","blue","red"),lty=,bty="o", lwd=2.5,legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 
 #plot4
 with(data, plot(DateTime,Global_reactive_power,type="n"))
 with(data,lines(DateTime,Global_reactive_power))
 
-#printing
-dev.print(device=png, filename="plot4.png",height=480,width=480)
 dev.off()

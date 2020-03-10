@@ -9,6 +9,6 @@ data$DateTime <- paste(data$Date,data$Time)
 #Global Active Power as numeric
 data$Global_active_power = as.numeric(as.character(data$Global_active_power))
 #plot and print
+png("plot1.png", width=480, height=480)
 hist(data$Global_active_power, col="red", breaks=12, main="Global Active Power", xlab="Global Active Power (kilowatts)")
-dev.print(device=png, filename="plot1.png",height=480,width=480)
 dev.off()
